@@ -1,0 +1,45 @@
+
+<div class="container">
+    <h2>Employee Tables</h2>
+    <div>
+        <table *ngIf="empService.empData.length != 0; else noTable" class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Department</th>
+                    <th scope="col">Salary</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let employee of empService.empData">
+                    <!-- <td (click) = "selectemployee(employee)">{{ employee.id }}</td> -->
+                    <td (click) = "viewEmployee(employee.id)">{{ employee.id }}</td>
+                    <td>{{ employee.first_name }}</td>
+                    <td>{{ employee.last_name }}</td>
+                    <td>{{ employee.department }}</td>
+                    <td>{{ employee.salary }}</td>
+                    <td>
+                        <button class="btn btn-primary me-2" (click)="onSelect(employee)">View</button>
+                        <button class="btn btn-success me-2" (click) = "editEmployee(employee)">Edit</button>
+                        <button class="btn btn-danger me-2" (click) = "deleteEmployee(employee.id)">Delete</button>
+                    </td>
+        
+                        <!-- <button (click) = "viewEmployee(employee.id)">View</button>
+                        &nbsp; -->
+                        <!-- <button (click) = "updateEmployee(employee)">Edit</button>
+                        &nbsp; -->
+                        <!-- <button mat-raised-button color="primary" (click) = "deleteeEmployee(employee.id)">Delete</button>
+                        &nbsp; -->
+                </tr>
+            </tbody>
+        </table>
+        <ng-template #noTable>
+            RESULT NOT FOUND!
+        </ng-template>
+    </div>
+</div>
+
+

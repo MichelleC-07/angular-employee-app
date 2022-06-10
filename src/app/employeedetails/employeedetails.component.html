@@ -1,0 +1,12 @@
+<div class="container-fluid">
+    <div *ngIf="employee">
+        <h2 [ngStyle]="{'margin-bottom': '20px'}">Employee Detail</h2>
+        <p>Employee ID: {{ employee.id }}</p>
+        <p>First Name: {{ employee.first_name }}</p>
+        <p>Last Name: {{ employee.last_name}}</p>
+        <p>Department: {{ employee.department }}</p>
+        <p>Salary: {{ employee.salary }}</p>
+    
+        <button class="btn btn-primary " (click)="prevPage()">Back</button>
+    </div>
+</div>

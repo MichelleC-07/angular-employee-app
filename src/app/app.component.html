@@ -1,0 +1,48 @@
+<!-- <mat-toolbar color="primary" class="header">
+    <div>
+        Employee Application
+    </div>
+</mat-toolbar> -->
+
+<mat-toolbar color="primary" class="header">
+    <span class="nav-tool-items">
+        <mat-icon (click)="sidenav.toggle()" class="hamburger">menu</mat-icon>
+    </span>
+    <div>Employee Application</div>
+  </mat-toolbar>
+
+<mat-sidenav-container autosize>
+
+    <mat-sidenav #sidenav [mode]="isBiggerScreen() ? 'over' : 'side'" [(opened)]="opened" [fixedInViewport]="true"
+      [fixedTopGap]>
+      <mat-nav-list>
+
+        <a mat-list-item routerLinkActive="active" routerLink="/login">
+            <mat-icon>login</mat-icon> Login
+        </a>
+
+        <a mat-list-item routerLinkActive="active" routerLink="/home">
+          <mat-icon>home</mat-icon> Home
+        </a>
+
+        <a mat-list-item routerLinkActive="active" routerLink="/employee-list">
+          <mat-icon>person</mat-icon> View Employees
+        </a>
+        
+        <a mat-list-item routerLinkActive="active" routerLink="/addemployee">
+          <mat-icon>add</mat-icon> Add Employee
+        </a>
+
+        <a mat-list-item (click)="logout()">
+            <mat-icon>logout</mat-icon> Logout
+        </a>
+
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+<!-- <app-employee></app-employee> -->
