@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(loginForm.value.username, loginForm.value.password).subscribe({
       next:(data:any) => {
         console.log(data)
-        console.log(data['accessToken'])
+        console.log(data['access'])
         localStorage.setItem('token', data['access']) //var token will be populate with data object that contains accessToken
         this.router.navigate([this.retUrl]);
       },error:(err) => {
