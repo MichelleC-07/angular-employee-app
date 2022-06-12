@@ -33,6 +33,17 @@ export class AuthGuardService {
   
   }
 
+  createAccount(first_name:string, last_name:string, username:string, email: string, password:string){
+    let info = {
+      "first_name": first_name,
+      "last_name": last_name,
+      "username": username,
+      "email": email,
+      "password": password
+    }
+    return this.http.post('http://127.0.0.1:8000/employee/create-user-profile/', info)
+  }
+
   // logoutService(){
   //   localStorage.clear();
 

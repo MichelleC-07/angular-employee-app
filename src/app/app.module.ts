@@ -23,6 +23,7 @@ import { AddEmployeeComponent } from './addemployee/addemployee.component';
 import { UpdateEmployeeComponent } from './updateemployee/updateemployee.component';
 import { HomeComponent } from './home/home.component';
 import { InterceptorService } from './services/interceptor.service';
+import { CreateAccComponent } from './createacc/createacc.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { InterceptorService } from './services/interceptor.service';
     LoginComponent,
     UpdateEmployeeComponent,
     HomeComponent,
+    CreateAccComponent,
     
   ],
   imports: [
